@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>HeeHeee!!</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+             Quizzz
+        </div>
+
+        <button id="themeButton" class="theme-button">
+            Dark Mode
+        </button>
+    </header>
+
+    <main class="main-container">
+
+        <!-- Welcome section -->
+        <section id="welcomeSection" class="welcome-section">
+
+            <div class="welcome-content">
+                <p class="small-heading">
+                    easu questions
+                </p>
+
+                <h1>
+                    start Quiz
+                </h1>
+
+                <input
+                    type="text"
+                    id="usernameInput"
+                    placeholder="Enter your name"
+                    autocomplete="off"
+                >
+
+                <p id="nameError" class="error-message"></p>
+
+                <button id="startButton" class="primary-button">
+                    Start Quiz
+                </button>
+            </div>
+
+            <div class="earth-card">
+                <div class="earth">🫩</div>
+
+                <h2>Quizz_Game</h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, est.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Quiz section -->
+        <section id="quizSection" class="quiz-section hidden">
+
+            <div class="quiz-header">
+                <div>
+                    <p id="welcomeMessage" class="player-name"></p>
+
+                    <p id="questionNumber"></p>
+                </div>
+
+                <p class="score-box">
+                    Score:
+                    <span id="scoreText">0</span>
+                </p>
+            </div>
+
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+
+            <div class="question-card">
+
+                <div id="questionIcon" class="question-icon">
+                    
+                </div>
+
+                <h2 id="questionText">
+                    Show your knowlegde
+                </h2>
+
+                <div id="answerContainer" class="answer-container">
+                    <!-- Answer buttons are created with JavaScript -->
+                </div>
+
+                <p id="feedbackMessage" class="feedback-message"></p>
+
+                <button
+                    id="nextButton"
+                    class="primary-button hidden"
+                >
+                    Next Question
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Result section -->
+        <section id="resultSection" class="result-section hidden">
+
+            <div class="result-card">
+
+                <div class="result-icon">🧑🏾‍🎓</div>
+
+                <h2>Quiz Completed!</h2>
+
+                <p id="finalMessage"></p>
+
+                <div class="final-score">
+                    <span id="finalScore">0</span>
+                    <span>/ 5</span>
+                </div>
+
+                <p id="resultComment"></p>
+
+                <button
+                    id="restartButton"
+                    class="primary-button"
+                >
+                    Play Again
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
