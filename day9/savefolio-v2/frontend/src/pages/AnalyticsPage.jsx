@@ -17,8 +17,8 @@ import { useFinance } from "../context/FinanceContext";
 import { formatCurrency } from "../utils/formatters";
 
 const colors = [
-  "#8b5cf6",
-  "#22c55e",
+  "#986cf7",
+  "#37b064e0",
   "#f97316",
   "#06b6d4",
   "#ec4899",
