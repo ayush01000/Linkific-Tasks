@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>Login</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='/styles.css') }}"
+    >
+</head>
+
+<body>
+    <main class="container">
+        <form id="login-form" class="card">
+            <h1>Welcome back</h1>
+            <p>Sign in to continue</p>
+
+            <label for="username">Username</label>
+            <input
+                id="username"
+                name="username"
+                type="text"
+                autocomplete="username"
+                required
+            >
+
+            <label for="password">Password</label>
+            <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+            >
+
+            <p id="error-message" class="error"></p>
+
+            <button type="submit">Sign in</button>
+
+            <small>
+                Default login: admin / admin123
+            </small>
+        </form>
+    </main>
+
+    <script>
+        const form = document.querySelector("#login-form");
+        const errorMessage =
+            document.querySelector("#error-message");
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            errorMessage.textContent = "";
+
+            const formData = new FormData(form);
+            const body = new URLSearchParams(formData);
+
+            const response = await fetch("/token", {
+                method: "POST",
+                headers: {
+                    "Content-Type":
+                        "application/x-www-form-urlencoded"
+                },
+                body: body
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                errorMessage.textContent =
+                    data.detail || "Login failed";
+                return;
+            }
+
+            window.location.href = "/dashboard";
+        });
+    </script>
+</body>
+</html>

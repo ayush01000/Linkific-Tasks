@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='/styles.css') }}"
+    >
+</head>
+
+<body>
+    <main class="container">
+        <section class="card">
+            <h1>Hello, {{ user.username }}</h1>
+
+            <p>
+                Your JWT is valid and this page is protected.
+            </p>
+
+            <button id="logout-button">
+                Sign out
+            </button>
+        </section>
+    </main>
+
+    <script>
+        const logoutButton =
+            document.querySelector("#logout-button");
+
+        logoutButton.addEventListener("click", async () => {
+            await fetch("/logout", {
+                method: "POST"
+            });
+
+            window.location.href = "/login";
+        });
+    </script>
+</body>
+</html>
