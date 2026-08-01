@@ -1,0 +1,7 @@
+fastapi[standard-no-fastapi-cloud-cli]==0.141.1
+SQLAlchemy==2.0.51
+psycopg[binary]==3.3.4
+alembic==1.18.5
+pydantic-settings==2.14.2
+PyJWT[crypto]==2.13.0
+pwdlib[argon2]==0.3.0
